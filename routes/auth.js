@@ -11,7 +11,7 @@ router.get(
   passport.authenticate("google", { session: false }),
   (req, res) => {
     const token = jwt.sign({ id: req.user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
-    res.redirect(`http://localhost:3000/auth/success?token=${token}`);
+    res.redirect(` https://profilai-lac.vercel.app/auth/success?token=${token}`);
   }
 );
 
